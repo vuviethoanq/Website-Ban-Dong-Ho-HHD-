@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WBDH_BTL.Site" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HHD TIME - Đồng hồ Thụy Sỹ Chính Hãng</title>
+    <link rel="stylesheet" href="Styles/Master.css" />
+</head>
+<body>
+    <form id="form1" runat="server" MaintainScrollPositionOnPostBack="true">
+
+        <!-- ========== HEADER ========== -->
+        <div class="dau-trang">
+            <div class="logo">HHD TIME</div>
+
+            <div class="o-tim-kiem">
+                <asp:TextBox ID="txtTimKiem" runat="server" placeholder="Nhập tên sản phẩm..." CssClass="txt-timkiem" />
+                <asp:Button ID="btnTimKiem" runat="server" Text="Tìm kiếm" CssClass="btn-timkiem" OnClick="btnTimKiem_Click" />
+            </div>
+
+            <div class="thong-tin">
+                <span>GIỜ LÀM VIỆC: 8H30 - 21H30</span>
+                <span class="so-dien-thoai">SĐT: 0987779999</span>
+ <asp:HyperLink ID="lnkGioHang" runat="server" NavigateUrl="GioHang.aspx" CssClass="cart">
+    🛒
+    <asp:Label ID="lblCartCount" runat="server" Text="0" CssClass="cart-count"></asp:Label>
+</asp:HyperLink>
+
+                <asp:HyperLink ID="lnkDangNhap" runat="server" NavigateUrl="DangNhap.aspx" CssClass="nut-dang-ky">ĐĂNG NHẬP</asp:HyperLink>
+                <asp:LinkButton ID="btnTaiKhoan" runat="server" Text="👤" CssClass="nut-tai-khoan" Visible="false" OnClick="btnTaiKhoan_Click"></asp:LinkButton>
+            </div>
+        </div>
+
+        <!-- ========== MENU ========== -->
+        <nav class="menu">
+            <div class="menu-item"><asp:HyperLink runat="server" NavigateUrl="TrangChu.aspx" Text="TRANG CHỦ" /></div>
+
+            <div class="menu-item">
+                <a href="#">THƯƠNG HIỆU</a>
+                <div class="dropdown">
+                    <a href="DanhMuc.aspx?thuonghieu=Rolex">Rolex</a>
+                    <a href="DanhMuc.aspx?thuonghieu=Patek%20Philippe">Patek Philippe</a>
+                    <a href="DanhMuc.aspx?thuonghieu=Hublot">Hublot</a>
+                    <a href="DanhMuc.aspx?thuonghieu=Omega">Omega</a>
+                    <a href="DanhMuc.aspx?thuonghieu=Audemars%20Piguet">Audemars Piguet</a>
+                    <a href="DanhMuc.aspx?thuonghieu=Piaget">Piaget</a>
+                    <a href="DanhMuc.aspx?thuonghieu=Tudor">Tudor</a>
+                    <a href="DanhMuc.aspx?thuonghieu=IWC%20Schaffhausen">IWC</a>
+                    <a href="DanhMuc.aspx?thuonghieu=Breitling">Breitling</a>
+                </div>
+            </div>
+            <div class="menu-item"><asp:HyperLink runat="server" NavigateUrl="DanhSachSp.aspx" Text="DANH SÁCH SẢN PHẨM" /></div>
+            <div class="menu-item"><asp:HyperLink runat="server" NavigateUrl="Suadongho.aspx" Text="SỬA ĐỒNG HỒ" /></div>
+            <div class="menu-item"><asp:HyperLink runat="server" NavigateUrl="DieuKhoan.aspx" Text="ĐIỀU KHOẢN" /></div>
+            <div class="menu-item"><asp:HyperLink runat="server" NavigateUrl="TaiKhoanCaNhan.aspx" Text="TÀI KHOẢN CÁ NHÂN" /></div>
+            <!-- CHỈ ADMIN THẤY: Quản trị -->
+            <div id="menuAdmin" runat="server" class="menu-item" visible="false">
+            <asp:HyperLink runat="server" NavigateUrl="Quantri.aspx" Text="QUẢN TRỊ" />
+</div>
+        </nav>
+
+
+
+        <!-- ========== NỘI DUNG TRANG CON ========== -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+        <!-- ========== FOOTER ========== -->
+        <div class="footer">
+            <div class="footer-columns">
+                <div>
+                    <h4>THÔNG TIN CÔNG TY</h4>
+                    <a href="#">Công ty TNHH HHD TIME</a>
+                    <a href="#">MST: 0107519953</a>
+                    <a href="#">Địa chỉ: 101 Thái Hà, Trung Liệt, Đống Đa, HN</a>
+                    <a href="#">Hotline: 098.777.9999</a>
+                    <a href="#">Email: hhdtime@gmail.com</a>
+                </div>
+                <div>
+                    <h4>ĐỊA CHỈ CỬA HÀNG</h4>
+                    <a href="#">101 Thái Hà - Đống Đa</a>
+                    <a href="#">55A Phan Chu Trinh - Hoàn Kiếm</a>
+                    <a href="#">429 Hai Bà Trưng - Q3 TP.HCM</a>
+                </div>
+                <div>
+                    <h4>THÔNG TIN KHÁC</h4>
+                    <a href="#">Hướng dẫn mua online</a>
+                    <a href="#">Đăng ký đại lý</a>
+                </div>
+                <div>
+                    <h4>CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
+                    <a href="#">Chính sách bảo hành</a>
+                    <a href="#">Chính sách đổi trả</a>
+                    <a href="#">Phương thức thanh toán</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ban-quyen">
+            <p>Copyright © 2025 © <strong>hhdtime.vn</strong></p>
+        </div>
+    </form>
+</body>
+</html>
