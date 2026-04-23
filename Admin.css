@@ -1,0 +1,269 @@
+﻿/* ========== VARIABLES ========== */
+:root {
+    --brand: #002040; /* xanh HHD TIME */
+    --brand-2: #004080; /* hover */
+    --bg: #ffffff;
+    --text: #1f2937; /* xám đen đọc tốt */
+    --muted: #6b7280; /* xám phụ */
+    --line: #e5e7eb; /* viền nhẹ */
+    --ok: #0ea5e9; /* xanh thông báo */
+    --danger: #dc2626; /* đỏ xóa */
+    --warn: #f59e0b; /* vàng cảnh báo */
+    --radius: 12px;
+    --shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+/* ========== PAGE WRAPPER ========== */
+.admin-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 28px auto;
+    background: var(--bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+    color: var(--text);
+    font-family: 'Times New Roman', serif;
+}
+
+    .admin-container h2 {
+        margin: 0 0 18px;
+        text-align: center;
+        letter-spacing: .5px;
+        color: var(--brand);
+    }
+
+/* ========== TOP ACTION BAR (optional) ========== */
+.admin-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+/* ========== ADD FORM ========== */
+.form-them {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-end;
+    margin: 8px 0 18px;
+    padding: 10px;
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.input-admin {
+    padding: 9px 10px;
+    min-width: 180px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    outline: none;
+    transition: .15s ease;
+    background: #fff;
+}
+
+    .input-admin:focus {
+        border-color: var(--brand);
+        box-shadow: 0 0 0 3px rgba(0,32,64,.12);
+    }
+
+.btn-admin {
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--brand);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .15s ease;
+    letter-spacing: .2px;
+}
+
+    .btn-admin:hover {
+        background: var(--brand-2);
+        transform: translateY(-1px);
+    }
+
+    .btn-admin:active {
+        transform: translateY(0);
+    }
+
+.btn-danger {
+    background: var(--danger) !important;
+}
+
+    .btn-danger:hover {
+        filter: saturate(1.05) brightness(.98);
+    }
+
+/* ========== GRIDVIEW TABLE ========== */
+.table-admin {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+}
+
+    .table-admin th {
+        background: var(--brand);
+        color: #fff;
+        text-align: left;
+        font-weight: 700;
+        padding: 12px 14px;
+        position: sticky;
+        top: 0;
+    }
+
+    .table-admin td {
+        background: #fff;
+        padding: 10px 14px;
+        border-top: 1px solid var(--line);
+        vertical-align: middle;
+    }
+
+    .table-admin tr:nth-child(even) td {
+        background: #f9fbff;
+    }
+
+    .table-admin img {
+        border-radius: 8px;
+        border: 1px solid var(--line);
+    }
+
+    /* Nút trong bảng (Sửa/Lưu/Hủy/Xóa) */
+    .table-admin a, .table-admin input[type="submit"], .table-admin .aspNetDisabled {
+        display: inline-block;
+        margin-right: 6px;
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--brand);
+        text-decoration: none;
+        cursor: pointer;
+        transition: .12s ease;
+    }
+
+        .table-admin a:hover, .table-admin input[type="submit"]:hover {
+            background: #eef4ff;
+            border-color: #c7d2fe;
+        }
+
+        .table-admin .delete-link, .table-admin a[text="Xóa"] {
+            color: var(--danger);
+        }
+
+    /* Input khi EDIT trong GridView */
+    .table-admin input[type="text"], .table-admin textarea {
+        width: 100%;
+        max-width: 100%;
+        padding: 7px 9px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        outline: none;
+    }
+
+        .table-admin input[type="text"]:focus, .table-admin textarea:focus {
+            border-color: var(--brand);
+            box-shadow: 0 0 0 3px rgba(0,32,64,.12);
+        }
+
+/* ========== VALIDATION & MESSAGES ========== */
+.error, .validator {
+    color: var(--danger);
+    display: block;
+    margin: 6px 0;
+}
+
+.ok {
+    color: var(--ok);
+}
+
+.warn {
+    color: var(--warn);
+}
+
+/* ========== PAGING (nếu thêm PagerStyle) ========== */
+.pager {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+    .pager a, .pager span {
+        padding: 6px 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+    }
+
+    .pager span {
+        background: #eef4ff;
+        border-color: #c7d2fe;
+        color: var(--brand);
+        font-weight: 700;
+    }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .admin-container {
+        width: 96%;
+        padding: 14px;
+    }
+
+    .form-them {
+        gap: 8px;
+    }
+
+    .input-admin {
+        min-width: unset;
+        flex: 1 1 48%;
+    }
+
+    .btn-admin {
+        width: 100%;
+    }
+
+    .table-admin th, .table-admin td {
+        padding: 9px 10px;
+        font-size: 15px;
+    }
+
+    .table-admin img {
+        max-width: 64px;
+        max-height: 64px;
+    }
+}
+
+/* ========== SMALL UTILITIES ========== */
+.tag {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: #3730a3;
+    font-size: 12px;
+    border: 1px solid #c7d2fe;
+}
+
+.badge-warn {
+    background: #fff7ed;
+    color: #c2410c;
+    border-color: #fdba74;
+}
+
+.modal-mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}

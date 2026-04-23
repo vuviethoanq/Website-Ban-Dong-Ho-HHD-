@@ -1,0 +1,205 @@
+﻿.container-chitiet {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.khung-chitiet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+/* ====== ẢNH SẢN PHẨM ====== */
+.cot-trai {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anh-chinh {
+    width: 70%;
+    max-width: 280px; /* Giới hạn tối đa ảnh */
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.cot-trai {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+
+    .anh-chinh:hover {
+        transform: scale(1.05);
+    }
+
+/* ====== THÔNG TIN ====== */
+.cot-phai {
+    flex: 1 1 45%;
+}
+
+    .cot-phai h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #002040;
+    }
+
+.gia {
+    font-size: 20px;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.gia-so {
+    font-weight: bold;
+}
+
+.mota {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+/* ====== SỐ LƯỢNG ====== */
+.chon-soluong {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.txtSoLuong {
+    width: 60px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.btnQty {
+    background-color: #002040;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .btnQty:hover {
+        background-color: #004080;
+    }
+
+/* ====== NÚT THÊM GIỎ ====== */
+.khung-themgio {
+    margin-top: 20px;
+}
+
+.btnThem {
+    background-color: #002040;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+    .btnThem:hover {
+        background-color: #003366;
+    }
+
+/* ====== GỢI Ý SẢN PHẨM ====== */
+.goi-y {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #002040;
+    border-bottom: 2px solid #002040;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.goi-y-danhsach {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.sanpham-lienquan {
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+    .sanpham-lienquan img {
+        width: 100%;
+        height: 160px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    .sanpham-lienquan:hover {
+        transform: scale(1.05);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    .sanpham-lienquan p {
+        margin: 5px 0;
+        font-size: 15px;
+    }
+
+/* Tablet ngang hoặc nhỏ hơn */
+@media (max-width: 992px) {
+    .anh-chinh {
+        width: 65%;
+        max-width: 240px;
+    }
+}
+
+/* Điện thoại (iPhone 12 Pro ≈ 390px) */
+@media (max-width: 480px) {
+    .khung-chitiet {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .cot-trai, .cot-phai {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .anh-chinh {
+        width: 75%;
+        max-width: 220px; /* ảnh nhỏ hơn, cân giữa */
+    }
+
+    .cot-phai h1 {
+        font-size: 22px;
+    }
+
+    .gia {
+        font-size: 18px;
+    }
+
+    .mota {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}

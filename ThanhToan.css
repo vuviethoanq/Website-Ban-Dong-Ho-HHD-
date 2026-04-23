@@ -1,0 +1,67 @@
+﻿.thanhtoan-container {
+    max-width: 900px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #002040;
+    margin-bottom: 25px;
+}
+
+.thongtin-nguoi-mua, .donhang-tongquat {
+    background: #f9f9f9;
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h3 {
+    color: #002040;
+    margin-bottom: 15px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.bang-tomtat {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+    .bang-tomtat th, .bang-tomtat td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+.tong-tien {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.btn-thanhtoan {
+    display: block;
+    width: 100%;
+    background: #002040;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+    .btn-thanhtoan:hover {
+        background: #004080;
+    }

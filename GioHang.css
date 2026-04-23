@@ -1,0 +1,248 @@
+﻿.giohang-container {
+    padding: 50px 0;
+    text-align: center;
+}
+
+    .giohang-container h1 {
+        color: #062a58;
+        margin-bottom: 25px;
+    }
+
+/* --- Bảng giỏ hàng --- */
+.bang-giohang {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+    .bang-giohang th, .bang-giohang td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .bang-giohang th {
+        background: #062a58;
+        color: #fff;
+    }
+
+    .bang-giohang img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+.input-sl {
+    width: 60px;
+    text-align: center;
+    padding: 5px;
+}
+
+/* --- Nút --- */
+.btn-xoa {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .btn-xoa:hover {
+        background: #c0392b;
+    }
+
+.nut-giohang {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-capnhat, .btn-thanhtoan, .btn-tieptuc {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+}
+
+.btn-capnhat {
+    background: #2980b9;
+}
+
+.btn-thanhtoan {
+    background: #27ae60;
+}
+
+.btn-tieptuc {
+    background: #34495e;
+}
+
+.btn-capnhat:hover {
+    background: #1e6091;
+}
+
+.btn-thanhtoan:hover {
+    background: #1e874b;
+}
+
+.btn-tieptuc:hover {
+    background: #2c3e50;
+}
+
+/* --- Tổng tiền --- */
+.tong-tien {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* --- Khi giỏ trống --- */
+.giohang-trong {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+/* =======================
+   GIỎ HÀNG ≤ 768px
+   ======================= */
+@media (max-width: 768px) {
+    .giohang-container {
+        padding: 24px 0;
+    }
+
+    /* Cho phép bảng cuộn ngang, tránh vỡ layout */
+    .bang-giohang {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap; /* giữ cột gọn, không xuống dòng lung tung */
+    }
+
+        .bang-giohang table {
+            width: 100%;
+        }
+
+        .bang-giohang th, .bang-giohang td {
+            padding: 10px 8px;
+            font-size: 14px;
+        }
+
+        .bang-giohang img {
+            width: 70px;
+            height: 70px;
+        }
+
+    .input-sl {
+        width: 54px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    /* Cụm nút phía dưới: dàn hàng, tự xuống hàng khi thiếu chỗ */
+    .nut-giohang {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .btn-capnhat, .btn-thanhtoan, .btn-tieptuc {
+        min-width: 160px;
+    }
+
+    .tong-tien {
+        padding: 0 12px;
+        font-size: 16px;
+    }
+}
+
+/* =======================
+   GIỎ HÀNG ≤ 480px (điện thoại)
+   ======================= */
+@media (max-width: 480px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .giohang-container {
+        padding: 18px 0;
+    }
+
+    /* Nén bảng hơn nữa, vẫn cho cuộn ngang khi cần */
+    .bang-giohang {
+        white-space: nowrap;
+    }
+
+        .bang-giohang th, .bang-giohang td {
+            padding: 8px 6px;
+            font-size: 13px;
+        }
+
+        .bang-giohang img {
+            width: 60px;
+            height: 60px;
+            border-radius: 6px;
+        }
+
+    .input-sl {
+        width: 48px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    /* Nút to – dễ bấm, xếp dọc cho gọn */
+    .nut-giohang {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 0 12px;
+    }
+
+    .btn-capnhat, .btn-thanhtoan, .btn-tieptuc {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    /* Tổng tiền căn giữa để không bị lệch */
+    .tong-tien {
+        text-align: center;
+        margin: 16px 0 4px;
+        font-size: 16px;
+    }
+}
+
+/* =======================
+   GIỎ HÀNG ≤ 400px (fit iPhone 12 Pro ~390px)
+   ======================= */
+@media (max-width: 400px) {
+    .bang-giohang th, .bang-giohang td {
+        padding: 7px 6px;
+        font-size: 12.5px;
+    }
+
+    .bang-giohang img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .btn-capnhat, .btn-thanhtoan, .btn-tieptuc {
+        font-size: 13.5px;
+    }
+
+    .tong-tien {
+        font-size: 15px;
+    }
+}

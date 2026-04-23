@@ -1,0 +1,195 @@
+/* =====================================================
+   QUÊN MẬT KHẨU – GIAO DIỆN ĐỒNG BỘ HHD TIME (Navy + Gold)
+   ===================================================== */
+
+/* -------- Màu chủ đạo -------- */
+:root {
+    --navy: #002040; /* màu xanh đậm HHD TIME */
+    --gold: #c7a008; /* vàng ánh kim nhẹ */
+    --text: #1a1a1a; /* chữ chính */
+    --border: #dcdcdc;
+    --bg-page: #f9f9fb; /* nền trang nhạt */
+    --white: #ffffff;
+}
+
+/* -------- Reset cơ bản -------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* -------- Nền & căn giữa -------- */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-page);
+    color: var(--text);
+}
+
+/* -------- Khung chứa chính -------- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* -------- Form box -------- */
+.reset-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    width: 420px;
+    max-width: 92%;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+    /* -------- Tiêu đề -------- */
+    .reset-box h2 {
+        font-size: 26px;
+        color: var(--navy);
+        margin-bottom: 22px;
+        position: relative;
+        letter-spacing: 0.5px;
+    }
+
+        .reset-box h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+    /* -------- Ô nhập liệu -------- */
+    .reset-box input[type="text"],
+    .reset-box input[type="email"] {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 15px;
+        background-color: var(--white);
+        color: var(--text);
+        outline: none;
+        transition: all 0.25s ease;
+    }
+
+    .reset-box input:focus {
+        border-color: var(--navy);
+        box-shadow: 0 0 0 3px rgba(0, 32, 64, 0.2);
+    }
+
+    .reset-box input::placeholder {
+        color: #999;
+    }
+
+    /* -------- Nút xác nhận -------- */
+    .reset-box button,
+    .reset-box input[type="submit"],
+    #btnReset {
+        width: 100%;
+        padding: 14px;
+        margin-top: 8px;
+        background-color: var(--navy);
+        color: var(--white);
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 6px 16px rgba(0, 32, 64, 0.18);
+        transition: background 0.25s ease, color 0.25s ease, transform 0.05s ease;
+    }
+
+        .reset-box button:hover,
+        #btnReset:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        .reset-box button:active,
+        #btnReset:active {
+            transform: translateY(1px);
+        }
+
+/* -------- Thông báo -------- */
+#lblThongBao {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--navy);
+}
+
+/* -------- Liên kết chuyển trang -------- */
+.links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    .links a {
+        color: var(--navy);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease, border-bottom 0.2s ease;
+        border-bottom: 2px solid transparent;
+    }
+
+        .links a:hover {
+            color: var(--gold);
+            border-bottom: 2px solid var(--gold);
+        }
+
+/* -------- Hiệu ứng nhẹ -------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reset-box {
+    animation: fadeInUp 0.5s ease;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 480px) {
+    .reset-box {
+        width: 92%;
+        padding: 30px 22px;
+    }
+
+        .reset-box h2 {
+            font-size: 22px;
+        }
+
+        .reset-box input,
+        .reset-box button {
+            padding: 12px;
+            font-size: 14px;
+        }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+}

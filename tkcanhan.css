@@ -1,0 +1,594 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.thanh-tren a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.thanh-tren i {
+    margin-left: 10px;
+}
+
+.dau-trang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+    height: 75px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #002040;
+}
+
+.o-tim-kiem {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+    .o-tim-kiem input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        width: 250px;
+        height: 40px
+    }
+
+#btnTimKiem {
+    background-color: #002040;
+    color: white;
+    border: 1px solid #000000;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: auto;
+    height: 35px
+}
+
+.thong-tin {
+    display: flex;
+    align-items: center;
+    color: #555;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+    .thong-tin i {
+        margin-right: 5px;
+        color: #888;
+    }
+
+    .thong-tin span {
+        display: flex;
+        align-items: center;
+    }
+
+.so-dien-thoai {
+    border-left: 1px solid #ccc;
+    padding-left: 15px;
+}
+
+.nut-dang-ky {
+    background-color: white;
+    color: #002040;
+    border: 2px solid #002040;
+    padding: 10px 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nut-tai-khoan {
+    background-color: #e3e3e3;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 3px;
+}
+
+.nut-dang-ky:hover {
+    background-color: #002040;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .dau-trang {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .thong-tin {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.cart {
+    position: relative;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+    .cart a {
+        text-decoration: none;
+    }
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 8px 0;
+    background: #f9f9f9;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.menu-item {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 6px 10px;
+    display: block;
+}
+
+.dropdown {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: rgb(255, 255, 255);
+    border: none;
+    display: none;
+    z-index: 100;
+    width: 200px;
+    padding: 5px 0;
+    line-height: 1.6;
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown a:hover {
+    background: #e3e3e3;
+    cursor: pointer;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 100%; /* 3 ảnh */
+    transition: transform 1s ease-in-out;
+}
+
+    .slider img {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.danh-sach-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 5%;
+    background-color: #fff;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.thuong-hieu {
+    flex: 0 0 auto;
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+    .thuong-hieu img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    .thuong-hieu:hover {
+        transform: scale(1.35);
+    }
+    /*Body*/
+.account-container {
+    width: 500px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    padding: 30px 40px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .account-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #222;
+        letter-spacing: 1px;
+    }
+
+    .account-container p {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+.btnLogout {
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btnLogout:hover {
+        background-color: #e74c3c;
+    }
+
+/* Đổi mật khẩu */
+.doi-mk {
+    margin-top: 25px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.btnChangePass {
+    width: 100%;
+    background: linear-gradient(135deg, #111, #333);
+    color: #f4d03f;
+    border: 1px solid #f4d03f;
+    border-radius: 6px;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btnChangePass:hover {
+        background: #f4d03f;
+        color: #111;
+    }
+
+.thongbao {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+    color: red;
+}
+
+    .thongbao.success {
+        color: green;
+    }
+
+
+
+.footer {
+    background: #0a2c53;
+    color: white;
+    padding: 20px 40px;
+    font-size: 14px;
+}
+
+    .footer img {
+        width: 210px;
+        height: 70px;
+        margin: 10px 0;
+    }
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    justify-content: space-between;
+}
+
+    .footer-columns div {
+        flex: 1 1 20%;
+        min-width: 200px;
+        line-height: 1.6;
+    }
+
+.footer h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.ban-quyen {
+    background-color: #040f32;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    padding: 10px;
+}
+
+
+/* ========== Tài khoản cá nhân - Responsive ========== */
+/* ≤ 768px */
+@media (max-width: 768px) {
+    /* Header co dọc, tránh vỡ hàng */
+    .dau-trang {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        height: auto;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 26px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .o-tim-kiem {
+        width: 100%;
+        gap: 8px;
+        justify-content: center;
+    }
+
+        .o-tim-kiem input[type="text"] {
+            width: 70%;
+            height: 36px;
+        }
+
+    #btnTimKiem {
+        height: 36px;
+        padding: 6px 10px;
+    }
+
+    .thong-tin {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 6px;
+        margin-top: 6px;
+        width: 100%;
+    }
+
+    .so-dien-thoai {
+        border: none;
+        padding-left: 0;
+    }
+
+    /* Menu: cuộn ngang, không vỡ chữ */
+    .menu {
+        display: block;
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 8px 12px;
+        border-bottom: 1px solid #eee;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .menu-item {
+        display: inline-block;
+        margin-right: 16px;
+    }
+
+    .menu a {
+        display: inline-block;
+        padding: 6px 0;
+        font-size: 14px;
+    }
+
+    /* Banner */
+    .banner {
+        height: 220px;
+    }
+
+    .slider img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 3px 6px;
+    }
+
+    /* Thương hiệu */
+    .danh-sach-logo {
+        gap: 10px;
+        padding: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .thuong-hieu {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Khối tài khoản */
+    .account-container {
+        width: 92%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
+
+/* ≤ 480px */
+@media (max-width: 480px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .o-tim-kiem input[type="text"] {
+        width: 100%;
+    }
+
+    #btnTimKiem {
+        white-space: nowrap;
+    }
+
+    .menu a {
+        font-size: 13.5px;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    .thuong-hieu {
+        width: 56px;
+        height: 56px;
+    }
+
+    .btnLogout, .btnChangePass {
+        font-size: 14px;
+    }
+}
+
+/* ≤ 400px (fit iPhone 12 Pro) */
+@media (max-width: 400px) {
+    .logo {
+        font-size: 22px;
+    }
+
+    .banner {
+        height: 180px;
+    }
+
+    .menu-item {
+        margin-right: 12px;
+    }
+
+    .account-container,
+    .tk-canhan,
+    .box-tkcanhan {
+        max-width: 560px;
+        width: 94%;
+        margin: 12px auto;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+        /* Tiêu đề & info căn giữa cho gọn */
+        .account-container h2,
+        .tk-canhan h2,
+        .account-title {
+            text-align: center;
+        }
+    /* Hàng thông tin căn trái nhưng không tràn */
+    .account-info {
+        width: 100%;
+        word-break: break-word;
+    }
+
+    /* Nút đăng xuất / đổi mật khẩu căn giữa & đều chiều rộng */
+    .account-container .btn,
+    .account-container button,
+    .account-container input[type="submit"],
+    .btnLogout, .btnChangePass {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 8px auto 0;
+    }
+
+    /* Input đổi mật khẩu full-width */
+    .account-container input[type="password"],
+    .account-container input[type="text"],
+    .account-container .form-control {
+        width: 100%;
+    }
+}

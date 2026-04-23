@@ -1,0 +1,376 @@
+/* ================== RESET CƠ BẢN ================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fff;
+    color: #111;
+}
+
+/* ================== TIÊU ĐỀ CHÍNH ================== */
+.tieude {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 1px;
+    margin: 50px 0 30px;
+    position: relative;
+}
+
+    .tieude::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: #d4af37; /* gold */
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+
+/* ================== DANH SÁCH SẢN PHẨM ================== */
+.dong-ho-danhsach {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 25px;
+    padding: 0 40px 60px;
+    justify-items: center;
+}
+
+/* Ô sản phẩm */
+.sanpham {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 280px;
+    border: 1px solid #eee;
+}
+
+    .sanpham:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+/* Ảnh sản phẩm */
+.anh-sanpham {
+    width: 100%;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+    .anh-sanpham img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+.sanpham:hover .anh-sanpham img {
+    transform: scale(1.08);
+}
+
+/* Tên sản phẩm */
+.tensanpham {
+    font-size: 16px;
+    font-weight: 600;
+    color: #002040;
+    margin: 10px 0 6px 0;
+    min-height: 44px;
+    line-height: 1.4;
+}
+
+/* Giá */
+.gia {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 17px;
+    margin: 6px 0 10px;
+}
+
+/* Nút Thêm vào giỏ */
+.sanpham .aspNetButton,
+.sanpham input[type="submit"],
+.sanpham button {
+    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+    color: #f4d03f;
+    border: 1px solid #f4d03f;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 5px;
+}
+
+    .sanpham .aspNetButton:hover,
+    .sanpham input[type="submit"]:hover {
+        background: #f4d03f;
+        color: #1a1a1a;
+        box-shadow: 0 0 12px rgba(244, 208, 63, 0.6);
+        transform: translateY(-2px);
+    }
+
+/* Responsive: Khi màn hình nhỏ */
+@media (max-width: 768px) {
+    .dong-ho-danhsach {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        padding: 0 20px 40px;
+        gap: 20px;
+    }
+
+    .anh-sanpham {
+        height: 200px;
+    }
+
+    .tensanpham {
+        font-size: 15px;
+    }
+}
+
+/* ================== TIN TỨC & VIDEO ================== */
+
+/* Bài viết */
+.posts-grid {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    gap: 24px;
+}
+
+.post-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden; /* giữ ảnh trong card */
+    box-shadow: 0 6px 16px rgba(0,0,0,.06);
+    transition: .25s;
+    min-width: 0; /* chống tràn lưới */
+}
+
+    .post-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .post-card img {
+        display: block;
+        width: 100%;
+        height: 160px; /* ảnh đồng đều */
+        object-fit: cover; /* cắt vừa khung, không méo */
+    }
+
+    .post-card h3 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.35;
+        margin: 10px 12px 14px;
+    }
+
+    .post-card a {
+        color: #111;
+        text-decoration: none;
+    }
+
+        .post-card a:hover {
+            color: #002040;
+            text-decoration: underline;
+        }
+
+/* mobile */
+@media (max-width:768px) {
+    .posts-grid {
+        grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    }
+
+    .post-card img {
+        height: 140px;
+    }
+}
+/* ==================== TIN TỨC & VIDEO ==================== */
+.khung-tin-video {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 5%;
+}
+
+/* ==================== TIN TỨC & VIDEO ==================== */
+.khung-tin-video {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 5%;
+}
+
+/* ----- CỘT TRÁI: BÀI VIẾT ----- */
+.cot-trai {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bai-viet {
+    display: flex;
+    gap: 15px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.bai-viet:hover {
+        transform: translateY(-5px);
+}
+
+.bai-viet img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+}
+
+.noi-dung {
+    flex: 1;
+}
+
+.tieu-de-nho {
+    font-size: 16px;
+    color: #002040;
+    margin-bottom: 4px;
+}
+
+.mo-ta {
+    font-size: 14px;
+    color: #555;
+}
+
+/* ----- CỘT PHẢI: VIDEO ----- */
+.cot-phai {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.khung-video {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+    .khung-video:hover {
+        transform: translateY(-4px);
+    }
+
+    /* Giới hạn tỷ lệ video 16:9 */
+    .khung-video video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+    }
+
+.mo-ta-video {
+    padding: 14px 0 20px;
+    background: #fff;
+}
+
+.tieu-de-video {
+    font-size: 18px;
+    font-weight: bold;
+    color: #002040;
+    margin-bottom: 4px;
+}
+
+.phu-de-video {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .cot-phai {
+        justify-content: center;
+    }
+
+    .khung-video {
+        max-width: 100%;
+    }
+}
+
+
+/* ================== CAM KẾT & LOGO ================== */
+.cam-ket {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 30px 0;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+    .cam-ket div {
+        flex: 1;
+    }
+
+    .cam-ket img {
+        width: 50px;
+        margin-bottom: 10px;
+        animation: laclu 0.5s infinite ease-in-out;
+        transform-origin: center bottom;
+    }
+
+@keyframes laclu {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+.cam-ket p:hover, .cam-ket h4:hover {
+    text-decoration: underline;
+    color: #aaa;
+    cursor: pointer;
+}

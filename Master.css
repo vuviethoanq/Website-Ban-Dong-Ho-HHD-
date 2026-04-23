@@ -1,0 +1,612 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.thanh-tren a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.thanh-tren i {
+    margin-left: 10px;
+}
+
+.dau-trang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+    height: 75px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #002040;
+}
+
+.o-tim-kiem {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+    .o-tim-kiem input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        width: 250px;
+        height: 40px
+    }
+
+#btnTimKiem {
+    background-color: #002040;
+    color: white;
+    border: 1px solid #000000;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: auto;
+    height: 35px
+}
+
+.thong-tin {
+    display: flex;
+    align-items: center;
+    color: #555;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+    .thong-tin i {
+        margin-right: 5px;
+        color: #888;
+    }
+
+    .thong-tin span {
+        display: flex;
+        align-items: center;
+    }
+
+.so-dien-thoai {
+    border-left: 1px solid #ccc;
+    padding-left: 15px;
+}
+
+.nut-dang-ky {
+    background-color: white;
+    color: #002040;
+    border: 2px solid #002040;
+    padding: 10px 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nut-tai-khoan {
+    background-color: #e3e3e3;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 3px;
+}
+
+.nut-dang-ky:hover {
+    background-color: #002040;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .dau-trang {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .thong-tin {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 8px 0;
+    background: #f9f9f9;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.menu-item {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 6px 10px;
+    display: block;
+}
+
+.dropdown {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: rgb(255, 255, 255);
+    border: none;
+    display: none;
+    z-index: 100;
+    width: 200px;
+    padding: 5px 0;
+    line-height: 1.6;
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown a:hover {
+    background: #e3e3e3;
+    cursor: pointer;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 100%; /* 3 ảnh */
+    transition: transform 1s ease-in-out;
+}
+
+    .slider img {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.danh-sach-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 5%;
+    background-color: #fff;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.thuong-hieu {
+    flex: 0 0 auto;
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+    .thuong-hieu img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    .thuong-hieu:hover {
+        transform: scale(1.35);
+    }
+
+
+.cart {
+    position: relative;
+    display: inline-block;
+    font-size: 26px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    vertical-align: middle;
+}
+
+    .cart:hover {
+        color: #002040;
+        text-decoration: none;
+    }
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+}
+
+
+.footer {
+    background: #0a2c53;
+    color: white;
+    padding: 20px 40px;
+    font-size: 14px;
+}
+
+    .footer img {
+        width: 210px;
+        height: 70px;
+        margin: 10px 0;
+    }
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    justify-content: space-between;
+}
+
+    .footer-columns div {
+        flex: 1 1 20%;
+        min-width: 200px;
+        line-height: 1.6;
+    }
+
+.footer h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.ban-quyen {
+    background-color: #040f32;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    padding: 10px;
+}
+@media (max-width: 768px) {
+    /* Header */
+    .dau-trang {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        height: auto;
+    }
+
+    .logo {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .o-tim-kiem {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+        .o-tim-kiem input[type="text"] {
+            width: 70%;
+            height: 38px;
+        }
+
+    #btnTimKiem {
+        padding: 8px 12px;
+        height: 38px;
+    }
+
+    .thong-tin {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    /* Menu */
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+
+    .dropdown {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    /* Banner */
+    .banner {
+        height: 220px;
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 3px 6px;
+    }
+
+    /* Logo thương hiệu */
+    .danh-sach-logo {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .thuong-hieu {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Footer */
+    .footer-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer img {
+        width: 150px;
+        height: auto;
+    }
+
+    .ban-quyen {
+        font-size: 13px;
+        padding: 8px;
+    }
+}
+
+/* =======================
+   MOBILE ≤ 480px
+   ======================= */
+@media (max-width: 480px) {
+    /* Chặn tràn ngang “khó chịu” */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Header */
+    .dau-trang {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 14px;
+        height: auto;
+    }
+
+    .logo {
+        font-size: 24px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .o-tim-kiem {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+
+        .o-tim-kiem input[type="text"] {
+            width: 70%;
+        }
+
+    #btnTimKiem {
+        width: auto;
+        min-width: 80px;
+        font-size: 13px;
+        height: 36px;
+    }
+
+    .thong-tin {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 6px;
+        margin-top: 4px;
+        width: 100%;
+    }
+
+    .so-dien-thoai {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .cart {
+        font-size: 24px;
+        position: relative;
+    }
+
+    .nut-dang-ky {
+        width: auto;
+        padding: 8px 16px;
+        font-size: 14px;
+        margin: 0 auto;
+    }
+
+    /* đảm bảo tất cả phần tử con không vượt khung */
+    .dau-trang *,
+    .thong-tin *,
+    .o-tim-kiem * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Menu – chuyển sang cuộn ngang, không vỡ từ */
+    .menu {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        display: block;
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 8px 12px;
+        gap: 0; /* gap không áp dụng khi dùng block + nowrap */
+        border-bottom: 1px solid #eee;
+        background: #f9f9f9;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .menu-item {
+        display: inline-block;
+        margin-right: 16px;
+    }
+
+    .menu a {
+        display: inline-block;
+        padding: 6px 0;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    /* Dropdown hiển thị theo luồng, không đè banner */
+    .dropdown {
+        position: static;
+        width: 100%;
+        display: none; /* để tránh che; nếu có JS click thì bỏ dòng này */
+        box-shadow: none;
+        padding: 4px 0;
+    }
+
+    /* Banner/Slider */
+    .banner {
+        height: 200px;
+    }
+
+    .slider img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 3px 6px;
+    }
+
+    /* Logo thương hiệu */
+    .danh-sach-logo {
+        gap: 10px;
+        padding: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .thuong-hieu {
+        width: 56px;
+        height: 56px;
+    }
+
+    /* Footer */
+    .footer-columns {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer img {
+        width: 150px;
+        height: auto;
+    }
+
+    .ban-quyen {
+        font-size: 13px;
+        padding: 8px;
+    }
+}
+
+/* =======================
+   iPhone 12 Pro ≤ 400px (điểm “fit” 390px)
+   ======================= */
+@media (max-width: 400px) {
+    .logo {
+        font-size: 22px;
+    }
+
+    .o-tim-kiem input[type="text"] {
+        height: 34px;
+    }
+
+    #btnTimKiem {
+        height: 34px;
+        padding: 4px 8px;
+        font-size: 13px;
+    }
+
+    .menu a {
+        font-size: 13.5px;
+    }
+
+    .menu-item {
+        margin-right: 12px;
+    }
+
+    .banner {
+        height: 180px;
+    }
+
+    .thuong-hieu {
+        width: 52px;
+        height: 52px;
+    }
+}

@@ -1,0 +1,313 @@
+﻿/* ==============================
+   DANH SÁCH SẢN PHẨM - HHD TIME
+   ============================== */
+
+/* Tổng thể */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tiêu đề */
+.tieude {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #002040;
+    letter-spacing: 1px;
+    margin: 40px 0 25px 0;
+    position: relative;
+}
+
+    .tieude::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 3px;
+        background: #d4af37;
+        margin: 10px auto 0 auto;
+        border-radius: 2px;
+    }
+
+/* Khu vực lọc nhanh */
+.locnhanh {
+    text-align: right;
+    margin: 0 60px 25px 0;
+}
+
+    .locnhanh select {
+        padding: 6px 10px;
+        font-size: 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        cursor: pointer;
+        background-color: #fafafa;
+        transition: 0.2s;
+    }
+
+        .locnhanh select:hover {
+            border-color: #002040;
+        }
+
+/* Danh sách sản phẩm (grid) */
+.dong-ho-danhsach {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    padding: 0 60px 60px 60px;
+    justify-items: center;
+}
+
+/* Ô sản phẩm */
+.sanpham {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    padding: 20px 15px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+    .sanpham:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+/* Ảnh sản phẩm */
+.anh-sanpham {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+    .anh-sanpham img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        transition: transform 0.4s ease;
+    }
+
+.sanpham:hover .anh-sanpham img {
+    transform: scale(1.05);
+}
+
+/* Tên sản phẩm */
+.ten-sanpham {
+    font-size: 16px;
+    font-weight: 600;
+    color: #002040;
+    margin: 10px 0 6px 0;
+    min-height: 44px;
+    line-height: 1.4;
+}
+
+/* Giá sản phẩm */
+.gia-sanpham {
+    color: #b8860b;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* Nút Thêm vào giỏ */
+.sanpham .aspNetButton,
+.sanpham input[type="submit"],
+.sanpham button {
+    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+    color: #f4d03f;
+    border: 1px solid #f4d03f;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 5px;
+}
+
+    .sanpham .aspNetButton:hover,
+    .sanpham input[type="submit"]:hover {
+        background: #f4d03f;
+        color: #1a1a1a;
+        box-shadow: 0 0 12px rgba(244, 208, 63, 0.6);
+        transform: translateY(-2px);
+    }
+
+
+/* Thông báo khi rỗng */
+.alert {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px 20px;
+    color: #333;
+    font-size: 15px;
+    text-align: center;
+    width: 50%;
+    margin: 40px auto;
+}
+
+/* Responsive nhỏ */
+@media (max-width: 768px) {
+    .dong-ho-danhsach {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+        padding: 0 20px 40px 20px;
+    }
+
+    .anh-sanpham {
+        height: 180px;
+    }
+
+    .tieude {
+        font-size: 22px;
+    }
+}
+
+.pager {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 24px 0 40px
+}
+
+    .pager a, .pager span {
+        padding: 8px 12px;
+        border: 1px solid #dcdfe6;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #002040;
+        background: #fff;
+        transition: .2s
+    }
+
+        .pager a:hover {
+            background: #002040;
+            color: #fff
+        }
+
+    .pager .current {
+        background: #002040;
+        color: #fff;
+        border-color: #002040
+    }
+
+    .pager .disabled {
+        opacity: .5;
+        pointer-events: none
+    }
+
+/* ========== Danh sách sản phẩm - Responsive ========== */
+/* ≤ 768px (tablet & phone) */
+@media (max-width: 768px) {
+    .dong-ho-danhsach {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+        padding: 0 16px 32px;
+    }
+
+    .anh-sanpham {
+        height: 180px;
+    }
+
+    .tieude {
+        font-size: 22px;
+        margin: 24px 0 18px;
+    }
+
+    .locnhanh {
+        text-align: left;
+        margin: 0 16px 16px;
+    }
+}
+
+/* ≤ 480px (điện thoại) */
+@media (max-width: 480px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Card sản phẩm: cột dọc, chia đều khoảng trống */
+    .sanpham {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 14px 10px;
+        box-sizing: border-box;
+    }
+
+    .anh-sanpham {
+        height: 150px;
+    }
+
+        .anh-sanpham img {
+            max-width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+    /* Tên + giá căn giữa và có chiều cao tối thiểu để các card đều nhau */
+    .ten-sanpham {
+        text-align: center;
+        font-size: 14px;
+        min-height: 40px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* cắt bớt nếu quá dài */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .gia-sanpham {
+        text-align: center;
+        margin-top: 6px;
+    }
+
+    /* Nút: block, căn giữa, tự dồn xuống đáy card */
+    .btn-them, .btn-them-vao-gio, .them-vao-gio,
+    .sanpham .btn, .sanpham input[type="submit"] {
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        margin: 10px auto 0;
+        text-align: center;
+        margin-top: auto; /* Đẩy nút xuống đáy card */
+    }
+
+    /* Lưới 2 cột gọn trên màn bé */
+    .dong-ho-danhsach {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 0 12px 24px;
+    }
+}
+
+/* ===== iPhone 12 Pro fit ≤ 400px ===== */
+@media (max-width: 400px) {
+    .anh-sanpham {
+        height: 140px;
+    }
+
+    .ten-sanpham {
+        font-size: 13.5px;
+        min-height: 38px;
+    }
+
+    .btn-them, .btn-them-vao-gio, .them-vao-gio,
+    .sanpham .btn, .sanpham input[type="submit"] {
+        max-width: 180px;
+    }
+}

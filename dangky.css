@@ -1,0 +1,272 @@
+﻿/* =========================
+   HHD TIME – ĐĂNG KÝ GỌN NHƯ LOGIN
+   ========================= */
+
+/* Màu chủ đạo */
+:root {
+    --primary: #002040;
+    --accent: #d4af37;
+    --panel: #ffffff;
+    --page: #f9fafb;
+    --text: #0f172a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --focus: #93c5fd;
+}
+
+/* Reset + font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--page);
+    color: var(--text);
+}
+
+/* =========================
+   Khung 2 cột
+   ========================= */
+.container {
+    display: flex;
+    width: 740px; /* cân giống login */
+    max-width: 95%;
+    min-height: 480px;
+    background: var(--panel);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+/* Cột trái */
+.welcome-section {
+    width: 42%;
+    background: linear-gradient(135deg, #0b1e36, var(--primary));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 28px;
+}
+
+    .welcome-section .welcome {
+        font-size: 28px;
+        margin-bottom: 10px;
+        letter-spacing: .3px;
+    }
+
+        .welcome-section .welcome::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            margin: 10px auto 0;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+    .welcome-section p {
+        font-size: 14px;
+        color: #e5eaf1;
+    }
+
+/* =========================
+   Cột phải: form đăng ký
+   ========================= */
+.forms-container {
+    width: 58%;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--panel);
+}
+
+.form-container {
+    width: 100%;
+    max-width: 360px; /* vừa, không quá to */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    /* Tiêu đề giữa */
+    .form-container h2 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--primary);
+    }
+
+    /* =========================
+   Input
+   ========================= */
+    .form-container input,
+    .aspNetInput {
+        width: 100%;
+        padding: 11px 12px;
+        margin: 8px 0;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        font-size: 14px;
+        background: #fff;
+        color: var(--text);
+        transition: border .2s, box-shadow .2s;
+        margin-left: 20px;
+    }
+
+        .form-container input::placeholder {
+            color: #9aa3af;
+        }
+
+        .form-container input:focus,
+        .aspNetInput:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--focus);
+        }
+
+/* =========================
+   Thông báo lỗi
+   ========================= */
+/* Nhãn lỗi luôn chiếm chỗ: không làm dịch layout khi set text */
+.error {
+    display: block;
+    min-height: 18px; /* đủ cho 1 dòng lỗi */
+    line-height: 18px;
+    font-size: 12px;
+    color: #dc2626;
+    margin-top: 4px;
+    /* không dùng margin-bottom lớn để giữ nhịp dọc gọn gàng */
+}
+
+/* Khi input bị lỗi muốn viền đỏ nhẹ */
+.invalid {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, .12) !important;
+}
+
+
+/* =========================
+   Nút đăng ký
+   ========================= */
+.btndangky {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    margin-left: 20px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 32, 64, .18);
+    transition: background .25s, color .25s, transform .05s;
+}
+
+    .btndangky:hover {
+        background: var(--accent);
+        color: var(--primary);
+    }
+
+    .btndangky:active {
+        transform: translateY(1px);
+    }
+
+/* =========================
+   Link nhỏ dưới nút
+   ========================= */
+.form-container p {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13.5px;
+    color: var(--muted);
+}
+
+.switch-form {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+}
+
+    .switch-form:hover {
+        color: var(--accent);
+        border-color: var(--accent);
+    }
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+        min-height: auto;
+    }
+
+    .welcome-section {
+        width: 100%;
+        padding: 24px 20px;
+    }
+
+    .forms-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form-container h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container input,
+    .btndangky {
+        padding: 10px;
+        font-size: 13.5px;
+    }
+}
+
+/* ===== PAGE SIGNUP OFFSET ===== */
+body.page-signup .forms-container {
+    justify-content: flex-start; /* đẩy form sang phải trong khung */
+    padding-left: 40px; /* tạo khoảng cách lớn hơn */
+}
+
+body.page-signup .form-container {
+}
+
+    body.page-signup .form-container h2 {
+        text-align: left; /* căn trái tiêu đề */
+        margin-left: 4px;
+    }
+
+.dktk {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.server-msg {
+    margin-left: 20px;
+    color: #dc2626;
+    font-size: 13px;
+    min-height: 18px;
+}
+
+.DaCoTK {
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
